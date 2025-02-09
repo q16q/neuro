@@ -1,4 +1,7 @@
 # neuro project
+> [!CAUTION]
+> don't use yet, it isn't finished
+
 my terrible attempt to bring neuro-sama to discord
 
 reqs:
