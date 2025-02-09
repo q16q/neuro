@@ -1,0 +1,29 @@
+{
+    "model": {
+        "index": "../models/VillainTTS/added_Villain-TTS_v2.index",
+        "model": "../models/VillainTTS/added_Villain-TTS_v2.pth",
+        "vol_embedding": false,
+        "speech_encoder": "vec768l12"
+    },
+    "data": {
+        "sampling_rate": 22050,
+        "hop_length": 256,
+        "win_length": 1024,
+        "n_fft": 1024,
+        "num_mels": 80,
+        "fmin": 0,
+        "fmax": 8000,
+        "unit_interpolate_mode": "left"
+    },
+    "train": {
+        "segment_size": 8192
+    },
+    "spk": {
+        "speaker_id": 0
+    },
+    "preprocessing": {
+        "trim_silence": true,
+        "silence_threshold": 60,
+        "min_silence_duration": 0.1
+    }
+}
