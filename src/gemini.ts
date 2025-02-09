@@ -14,14 +14,14 @@ const model: GenerativeModel = configuration.getGenerativeModel({
 });
 
 const session = model.startChat({
-    "safetySettings": config.safetySettings
+    "safetySettings": config.safetySettings,
+    "systemInstruction": config.systemInstruction
 })
 
-export async function generateResponse(prompt: string) {
-    let response = await session.sendMessageStream(prompt);
-    for await (let chunk of response.stream) {
-        console.log(chunk.text())
+export async function generateResponse(prompt: string, stream: boolean = false) {
+    if(stream) {
+        return await session.sendMessageStream(prompt);
+    } else {
+        return (await session.sendMessage(prompt)).response.text();
     }
 }
-
-generateResponse("What is the meaning of life?");
